@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemstones Based on Rashi</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+        }
+        #gemstones {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .gemstone {
+            background: white;
+            margin: 10px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        .gemstone img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Gemstones Based on Rashi</h1>
+        <p>Discover the perfect gemstone for your zodiac sign (Rashi) and its significance.</p>
+    </header>
+    <main>
+        <section id="gemstones"></section>
+    </main>
+    <script>
+        const gemstones = [
+            { rashi: "Aries (Mesha)", stone: "Red Coral", image: "https://www.gia.edu/images/gem-coral.jpg" },
+            { rashi: "Taurus (Vrishabha)", stone: "Diamond", image: "https://www.gia.edu/images/gem-diamond.jpg" },
+            { rashi: "Gemini (Mithuna)", stone: "Emerald", image: "https://www.gia.edu/images/gem-emerald.jpg" },
+            { rashi: "Cancer (Karka)", stone: "Pearl", image: "https://www.gia.edu/images/gem-pearl.jpg" },
+            { rashi: "Leo (Simha)", stone: "Ruby", image: "https://www.gia.edu/images/gem-ruby.jpg" },
+            { rashi: "Virgo (Kanya)", stone: "Emerald", image: "https://www.gia.edu/images/gem-emerald.jpg" },
+            { rashi: "Libra (Tula)", stone: "Diamond", image: "https://www.gia.edu/images/gem-diamond.jpg" },
+            { rashi: "Scorpio (Vrischika)", stone: "Red Coral", image: "https://www.gia.edu/images/gem-coral.jpg" },
+            { rashi: "Sagittarius (Dhanu)", stone: "Yellow Sapphire", image: "https://www.gia.edu/images/gem-sapphire.jpg" },
+            { rashi: "Capricorn (Makara)", stone: "Blue Sapphire", image: "https://www.gia.edu/images/gem-blue-sapphire.jpg" },
+            { rashi: "Aquarius (Kumbha)", stone: "Blue Sapphire", image: "https://www.gia.edu/images/gem-blue-sapphire.jpg" },
+            { rashi: "Pisces (Meena)", stone: "Yellow Sapphire", image: "https://www.gia.edu/images/gem-sapphire.jpg" }
+        ];
+
+        const container = document.getElementById("gemstones");
+        gemstones.forEach(gem => {
+            const div = document.createElement("div");
+            div.className = "gemstone";
+            div.innerHTML = `<h2>${gem.rashi}</h2><img src="${gem.image}" alt="${gem.stone}"><p>${gem.stone}</p>`;
+            container.appendChild(div);
+        });
+    </script>
+</body>
+</html>
